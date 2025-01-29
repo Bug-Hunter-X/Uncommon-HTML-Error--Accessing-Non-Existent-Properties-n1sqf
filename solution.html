@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error Solution</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv"></div>
+  <script>
+    let myDiv = document.getElementById('myDiv');
+    //Check if the element exists before accessing properties
+    if(myDiv){
+        let propertyExists = myDiv.hasOwnProperty('id'); //Check if the property exists
+        if(propertyExists){
+            let existingProperty = myDiv.id;
+            console.log(existingProperty); //Access only if the property exists
+        } else {
+            console.log("The property does not exist.");
+        }
+    }else {
+        console.log("The element does not exist.");
+    }
+  </script>
+</body>
+</html>
